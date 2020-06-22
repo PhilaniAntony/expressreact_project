@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const config = require("express");
+const config = require("config");
 const bycript = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../model/User");
@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
   res.send("Get logged in users");
 });
 
-//@ route POST api/user
+//@route POST api/users
 //@desc  Register a  user
 //@access  Public
 router.post(

@@ -1,4 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://Philani:atlasadmin@expressproject-iz18u.mongodb.net/expressproject?retryWrites=true&w=majority",
+  "mongoURI": "mongodb+srv://Philani:slrGVIchKV0wiour@expressproject-iz18u.mongodb.net/mernapp?retryWrites=true&w=majority",
   "jwtSecret": "SECRET"
 }
