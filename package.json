@@ -4,17 +4,16 @@
   "description": "Contact Manager app",
   "main": "index.js",
   "scripts": {
-    "start": "node index",
-    "begin": "node server.js",
-    "srvr": "nodemon server.js",
-    "client": "cd client && run npm start",
-    "server": "nodemon index --ignore client",
-    "dev": "concurrently \"npm run client\" \"npm run dev\" "
+    "start": "node index.js",
+    "client": "npm start --prefix clint",
+    "server": "nodemon index.js  --ignore client",
+    "dev": "concurrently \"npm run server\" \"npm run client\" "
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.2",
     "bcryptjs": "^2.4.3",
     "concurrently": "^5.2.0",
     "config": "^3.3.1",
@@ -22,6 +21,9 @@
     "express-validator": "^6.5.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.19",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "react-icons": "^3.10.0",
+    "react-uuid": "^1.0.2",
+    "uuid": "^8.1.0"
   }
 }

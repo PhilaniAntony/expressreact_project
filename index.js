@@ -1,30 +1,16 @@
 const express = require("express");
-const mongoose = reqiure("mongoose");
-const bodyParser = require("body-parser");
+const connectDB = require("./config/db");
 const PORT = process.env.PORT || 5000;
-//Innitialise express app
+
+//Initialise  express app
 const app = express();
-app.use(bodyParser.json());
+//Use body parser
+app.use(express.json({ extended: false }));
+//Connect to database
+//connectDB();
 
-//Create Route
-const employee = require("./routes/employee");
-app.use("/employee", employee);
-
-//Connecting to mongodb
-
-mongoose.connect(
-  dbconnection,
-  {
-    useNewUrlParser: true,
-    useFindAndModify: false,
-  },
-  (error) => {
-    if (error) {
-      process.exit(1);
-      console.log("Connection Failed");
-    } else {
-      console.log("Successfully Conected");
-    }
-  }
-);
+//Define routes
+app.use("/api/user", require("./routes/user"));
+app.use("/api/auth", require("./routes/auth"));
+app.use("/api/contacts", require("./routes/contacts"));
 app.listen(PORT);
